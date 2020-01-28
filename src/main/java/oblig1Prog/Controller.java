@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-
 import java.util.ArrayList;
 
 public class Controller {
@@ -76,11 +75,9 @@ public class Controller {
         Person person1 = new Person(innAlder, navn, dato1);
         liste.add(person1);
 
-        for(i:liste){
+//        for(i:liste){ }
 
-        }
-
-        lblRegistrertePersoner.setText();
+        lblRegistrertePersoner.setText("Test");
 
         /* Sitter fast ved datoen, ved at den skal feilsjekkes for at den er tall og den er mellom de tallene jeg vil*/
 

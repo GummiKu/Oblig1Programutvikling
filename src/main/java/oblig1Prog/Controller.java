@@ -75,9 +75,11 @@ public class Controller {
         Person person1 = new Person(innAlder, navn, dato1);
         liste.add(person1);
 
-//        for(i:liste){ }
+       for(Person i:liste){
+           lblRegistrertePersoner.setText("Navn : " + i.navn +"\nAlder: " + i.alder + "\nFødselsdato: "+ i.fødselsdato);
+       }
 
-        lblRegistrertePersoner.setText("Test");
+        // lblRegistrertePersoner.setText("Test");
 
         /* Sitter fast ved datoen, ved at den skal feilsjekkes for at den er tall og den er mellom de tallene jeg vil*/
 

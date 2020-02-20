@@ -8,7 +8,6 @@ public class Dato {
         this.måned = måned;
         this.år = år;
 
-        String ut = dag + "." + måned + "." + år;
     }
 
     @Override

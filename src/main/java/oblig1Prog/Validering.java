@@ -14,8 +14,11 @@ public class Validering {
     }
 
     public static void epostSjekk{
+        //TODO Feilsjekk epost
+
     }
     public static void telefonSjekk{
+        //TODO Feilsjekk telefunnummer
 
     }
 }

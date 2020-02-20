@@ -9,53 +9,52 @@ import javafx.scene.control.TextField;
 
 public class Controller {
 
-    @FXML
-    private Button registrerPerson;
-
-    @FXML
-    private Label lblNavn;
-
-    @FXML
-    private Label lblAlder;
-
-    @FXML
-    private TextField txtNavn;
-
-    @FXML
-    private TextField txtAlder;
-
-    @FXML
-    private TextField txtFødselsdato;
-
-    @FXML
-    private Label lblFødselsdato;
-
-    @FXML
-    private Label lblResultat;
-
-    @FXML
-    private TextField txtEpost;
-
-    @FXML
-    private TextField txtTelefon;
-
-    @FXML
-    private Label lblEpost;
-
-    @FXML
-    private Label lblTelefon;
-
-    @FXML
-    private TextField txtFødselsdato1;
-
-    @FXML
-    private TextField txtFødselsdato2;
+    PersonRegister reg = new PersonRegister();
 
     @FXML
     private MenuItem lagreTilFil;
 
     @FXML
     private MenuItem hentFraFil;
+
+    @FXML
+    private Label lblNavn;
+
+    @FXML
+    private TextField txtNavn;
+
+    @FXML
+    private Label lblAlder;
+
+    @FXML
+    private TextField txtAlder;
+
+    @FXML
+    private Label lblFødselsdato;
+
+    @FXML
+    private TextField txtDag;
+
+    @FXML
+    private TextField txtMåned;
+
+    @FXML
+    private TextField txtÅr;
+
+    @FXML
+    private Label lblEpost;
+
+    @FXML
+    private TextField txtEpost;
+
+    @FXML
+    private Label lblTelefon;
+
+    @FXML
+    private TextField txtTelefon;
+
+    @FXML
+    private Button registrerPerson;
 
     @FXML
     void hentFraFil(ActionEvent event) {
@@ -69,7 +68,9 @@ public class Controller {
 
     @FXML
     void registrerPerson(ActionEvent event) {
-
+        //Hente informasjon fra Label og legge til person i reg
+        reg.registrerPerson(txtAlder.getText(), txtNavn.getText(), txtDag.getText(), txtMåned.getText(), txtÅr.getText(),
+                txtEpost.getText(),txtTelefon.getText());
     }
 
 }

@@ -2,63 +2,54 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="center" hgap="10" prefHeight="361.0" prefWidth="567.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oblig1Prog.Controller">
-   <columnConstraints>
-      <ColumnConstraints maxWidth="139.0" minWidth="108.0" prefWidth="139.0" />
-      <ColumnConstraints maxWidth="163.0" minWidth="34.0" prefWidth="39.0" />
-      <ColumnConstraints maxWidth="289.0" minWidth="39.0" prefWidth="39.0" />
-      <ColumnConstraints maxWidth="388.0" minWidth="50.0" prefWidth="50.0" />
-      <ColumnConstraints maxWidth="400.0" minWidth="100.0" prefWidth="100.0" />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-   </rowConstraints>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="605.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oblig1Prog.Controller">
    <children>
-      <Label text="Registrering " GridPane.columnSpan="4">
-         <font>
-            <Font size="41.0" />
-         </font>
-      </Label>
-      <Label text="Navn" GridPane.rowIndex="1">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label text="Alder" GridPane.rowIndex="2">
+      <Button fx:id="registrerPerson" layoutX="296.0" layoutY="285.0" mnemonicParsing="false" onAction="#registrerPerson" text="Registrer" />
+      <Label fx:id="lblNavn" layoutX="180.0" layoutY="90.0" text="Navn" />
+      <Label fx:id="lblAlder" layoutX="180.0" layoutY="130.0" text="Alder" />
+      <TextField fx:id="txtNavn" layoutX="264.0" layoutY="86.0" promptText="Navn" />
+      <TextField fx:id="txtAlder" layoutX="264.0" layoutY="126.0" promptText="Alder" />
+      <TextField fx:id="txtFødselsdato" layoutX="264.0" layoutY="166.0" prefHeight="25.0" prefWidth="39.0" promptText="dd" />
+      <Label fx:id="lblFødselsdato" layoutX="181.0" layoutY="170.0" text="Fødselsdato" />
+      <Label fx:id="lblResultat" alignment="TOP_LEFT" layoutX="23.0" layoutY="329.0" prefHeight="83.0" prefWidth="274.0" />
+      <Label layoutX="262.0" layoutY="29.0" text="Personregister">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label text="Fødselsdato" GridPane.rowIndex="3">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Button mnemonicParsing="false" onAction="#registrerPersoner" text="Registrer " GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
-      <TextField fx:id="txtNavn" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="1" />
-      <TextField fx:id="txtAlder" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" />
-      <TextField fx:id="txtDag" promptText="dd" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <TextField fx:id="txtMåned" promptText="mm" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-      <TextField fx:id="txtÅr" prefHeight="27.0" prefWidth="240.0" promptText="åååå" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-      <Label text="Registrerte personer" GridPane.columnSpan="4" GridPane.rowIndex="5">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblRegistrertePersoner" GridPane.columnSpan="4" GridPane.rowIndex="6" />
-      <Label fx:id="lblFeilAlder" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-      <Label fx:id="lblFeilDato" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+      <TextField fx:id="txtEpost" layoutX="264.0" layoutY="206.0" promptText="Epost" />
+      <TextField fx:id="txtTelefon" layoutX="264.0" layoutY="247.0" promptText="Telefon" />
+      <Label fx:id="lblEpost" layoutX="181.0" layoutY="210.0" text="Epost" />
+      <Label fx:id="lblTelefon" layoutX="181.0" layoutY="251.0" text="Telefon" />
+      <TextField fx:id="txtFødselsdato1" layoutX="319.0" layoutY="166.0" prefHeight="25.0" prefWidth="39.0" promptText="mm" />
+      <TextField fx:id="txtFødselsdato2" layoutX="374.0" layoutY="166.0" prefHeight="25.0" prefWidth="39.0" promptText="åååå" />
+      <TableView layoutX="16.0" layoutY="328.0" prefHeight="258.0" prefWidth="573.0">
+        <columns>
+          <TableColumn prefWidth="119.19997596740723" text="Navn" />
+          <TableColumn prefWidth="50.4000244140625" text="Alder" />
+            <TableColumn prefWidth="92.0" text="Fødselsdato" />
+            <TableColumn prefWidth="188.0" text="Epost" />
+            <TableColumn prefWidth="126.39999389648438" text="Telefon" />
+        </columns>
+      </TableView>
+      <MenuBar layoutX="23.0" layoutY="17.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="lagreTilFil" mnemonicParsing="false" onAction="#lagreTilFil" text="Lagre til fil" />
+                  <MenuItem fx:id="hentFraFil" mnemonicParsing="false" onAction="#hentFraFil" text="Hent fra fil" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
    </children>
-</GridPane>
+</Pane>

@@ -2,11 +2,21 @@ package oblig1Prog;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
-import java.util.ArrayList;
 
 public class Controller {
+
+    @FXML
+    private Button registrerPerson;
+
+    @FXML
+    private Label lblNavn;
+
+    @FXML
+    private Label lblAlder;
 
     @FXML
     private TextField txtNavn;
@@ -15,75 +25,51 @@ public class Controller {
     private TextField txtAlder;
 
     @FXML
-    private TextField txtDag;
+    private TextField txtFødselsdato;
 
     @FXML
-    private TextField txtMåned;
+    private Label lblFødselsdato;
 
     @FXML
-    private TextField txtÅr;
+    private Label lblResultat;
 
     @FXML
-    private Label lblRegistrertePersoner;
+    private TextField txtEpost;
 
     @FXML
-    private Label lblFeilAlder;
+    private TextField txtTelefon;
 
     @FXML
-    private Label lblFeilDato;
+    private Label lblEpost;
 
     @FXML
-    void registrerPersoner(ActionEvent event) {
-        int innDag, innMåned, innÅr, innAlder;
+    private Label lblTelefon;
 
-        String navn = txtNavn.getText();
+    @FXML
+    private TextField txtFødselsdato1;
 
-        try{
-            innDag = Integer.parseInt(txtDag.getText());
-        } catch (InvalidDateException e){
-            lblFeilDato.setText("Dagen må være et heltall mellom 1 og 31.");
-            innDag = 0;
-        }
+    @FXML
+    private TextField txtFødselsdato2;
 
-        try{
-            innMåned = Integer.parseInt(txtMåned.getText());
-        } catch (InvalidDateException e){
-            lblFeilDato.setText("Måneden må være et heltall mellom 1 og 12.");
-            innMåned = 0;
-        }
+    @FXML
+    private MenuItem lagreTilFil;
 
-        try{
-            innÅr = Integer.parseInt(txtÅr.getText());
-        } catch (InvalidDateException e){
-            lblFeilDato.setText("Året må være et heltall mellom 1900 og 2020.");
-            innÅr = 0;
-        }
+    @FXML
+    private MenuItem hentFraFil;
 
-        try{
-            innAlder = Integer.parseInt(txtAlder.getText());
-            if (innAlder<0 || innAlder>120){
-                throw new InvalidAgeException("Alderen din må være et heltall mellom 0 og 120.");
-            }
-        } catch (InvalidAgeException e){
-            lblFeilAlder.setText("Alderen din må være et heltall mellom 0 og 120.");
-            innAlder = 0;
-        }
+    @FXML
+    void hentFraFil(ActionEvent event) {
 
+    }
 
-        ArrayList<Person> liste = new ArrayList<>();
-        Dato dato1 = new Dato(innDag, innMåned, innÅr);
-        Person person1 = new Person(innAlder, navn, dato1);
-        liste.add(person1);
+    @FXML
+    void lagreTilFil(ActionEvent event) {
 
-       for(Person i:liste){
-           lblRegistrertePersoner.setText("Navn : " + i.navn +"\nAlder: " + i.alder + "\nFødselsdato: "+ i.fødselsdato);
-       }
+    }
 
-        // lblRegistrertePersoner.setText("Test");
-
-        /* Sitter fast ved datoen, ved at den skal feilsjekkes for at den er tall og den er mellom de tallene jeg vil*/
+    @FXML
+    void registrerPerson(ActionEvent event) {
 
     }
 
 }
-

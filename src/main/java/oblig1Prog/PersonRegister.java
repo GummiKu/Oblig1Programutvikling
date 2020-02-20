@@ -14,13 +14,6 @@ public class PersonRegister {
             Person enPerson = new Person(navn, inputAlder, fødselsdato, epost, telefon);
 
             register.add(enPerson);
-
-                /* System.out.println("Navn: " + i.navn);
-                System.out.println("Alder: " + i.alder + " år");
-                System.out.println("Fødselsdato: " + i.fødselsdato);
-                System.out.println("Epost: " + i.epost);
-                System.out.println("Telefonnummer: " + i.tlf);
-                System.out.println("-------------------"); */
         }
 
         public ArrayList skrivUtListe() {

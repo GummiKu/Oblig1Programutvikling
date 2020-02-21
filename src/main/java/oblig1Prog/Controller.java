@@ -69,8 +69,16 @@ public class Controller {
     @FXML
     void registrerPerson(ActionEvent event) {
         //Hente informasjon fra Label og legge til person i reg
-        reg.registrerPerson(txtAlder.getText(), txtNavn.getText(), txtDag.getText(), txtMåned.getText(), txtÅr.getText(),
-                txtEpost.getText(),txtTelefon.getText());
+
+        int intAlder = Integer.parseInt(txtAlder.getText());
+        int intDag = Integer.parseInt(txtDag.getText());
+        int intMåned = Integer.parseInt(txtMåned.getText());
+        int intÅr = Integer.parseInt(txtÅr.getText());
+        Dato fødselsdato = new Dato(intDag, intMåned, intÅr);
+        Person enPerson = new Person(txtNavn.getText(), intAlder, fødselsdato, txtEpost.getText(), txtTelefon.getText());
+        reg.registrerPerson(enPerson);
+
+
     }
 
 }

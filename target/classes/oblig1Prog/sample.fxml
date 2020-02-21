@@ -20,7 +20,6 @@
       <TextField fx:id="txtAlder" layoutX="264.0" layoutY="126.0" promptText="Alder" />
       <TextField fx:id="txtFødselsdato" layoutX="264.0" layoutY="166.0" prefHeight="25.0" prefWidth="39.0" promptText="dd" />
       <Label fx:id="lblFødselsdato" layoutX="181.0" layoutY="170.0" text="Fødselsdato" />
-      <Label fx:id="lblResultat" alignment="TOP_LEFT" layoutX="23.0" layoutY="329.0" prefHeight="83.0" prefWidth="274.0" />
       <Label layoutX="262.0" layoutY="29.0" text="Personregister">
          <font>
             <Font size="18.0" />

@@ -1,5 +1,7 @@
 package oblig1Prog;
 
+import java.util.regex.Pattern;
+
 public class Validering {
     public static void datoSjekk(int dag, int måned, int år) throws InvalidDateException{
         if (dag<1 || dag>31){
@@ -13,12 +15,26 @@ public class Validering {
         }
     }
 
-    public static void epostSjekk{
-        //TODO Feilsjekk epost
+    public static boolean epostSjekk(String epost){
+        String epostRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
+                "[a-zA-Z0-9_+&*-]+)*@" +
+                "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                "A-Z]{2,7}$";
+        Pattern pat = Pattern.compile(epostRegex);
+        if(epost == null)
+            return false;
+        return pat.matcher(epost).matches();
 
+        // kilde for epostsjekk: https://www.geeksforgeeks.org/check-email-address-valid-not-java/
     }
-    public static void telefonSjekk{
+    public static boolean telefonSjekk(String telefonnr){
         //TODO Feilsjekk telefunnummer
+        String tlfRegex = "^(1\\-)?[0-9]{3}\\-?[0-9]{3}\\-?[0-9]{4}$";
+        Pattern pat = Pattern.compile(tlfRegex);
+        if(telefonnr == null)
+            return false;
+        return pat.matcher(telefonnr).matches();
 
+        // kilde for tlfnr regex: https://stackoverflow.com/questions/25763935/how-to-check-phone-number-format-is-valid-or-not-from-telephony-manager
     }
 }

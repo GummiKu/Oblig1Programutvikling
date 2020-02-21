@@ -7,10 +7,15 @@ public class PersonRegister {
         public void registrerPerson (Person enPerson) {
 
             register.add(enPerson);
-        }
+            for(Person i : register) {
 
-        public void skrivUtListe() {
-            //Skriv ut til system out for testing
-        }
+                    System.out.println("Navn: " + i.navn);
+                    System.out.println("Alder: " + i.alder + " år");
+                    System.out.println("Fødselsdato: " + i.fødselsdato);
+                    System.out.println("Epost: " + i.epost);
+                    System.out.println("Telefonnummer: " + i.telefon);
+                    System.out.println("-------------------");
 
+            }
+        }
 }

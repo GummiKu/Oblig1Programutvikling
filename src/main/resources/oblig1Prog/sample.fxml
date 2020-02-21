@@ -18,7 +18,7 @@
       <Label fx:id="lblAlder" layoutX="180.0" layoutY="130.0" text="Alder" />
       <TextField fx:id="txtNavn" layoutX="264.0" layoutY="86.0" promptText="Navn" />
       <TextField fx:id="txtAlder" layoutX="264.0" layoutY="126.0" promptText="Alder" />
-      <TextField fx:id="txtFødselsdato" layoutX="264.0" layoutY="166.0" prefHeight="25.0" prefWidth="39.0" promptText="dd" />
+      <TextField fx:id="txtDag" layoutX="264.0" layoutY="166.0" prefHeight="25.0" prefWidth="39.0" promptText="dd" />
       <Label fx:id="lblFødselsdato" layoutX="181.0" layoutY="170.0" text="Fødselsdato" />
       <Label layoutX="262.0" layoutY="29.0" text="Personregister">
          <font>
@@ -29,8 +29,8 @@
       <TextField fx:id="txtTelefon" layoutX="264.0" layoutY="247.0" promptText="Telefon" />
       <Label fx:id="lblEpost" layoutX="181.0" layoutY="210.0" text="Epost" />
       <Label fx:id="lblTelefon" layoutX="181.0" layoutY="251.0" text="Telefon" />
-      <TextField fx:id="txtFødselsdato1" layoutX="319.0" layoutY="166.0" prefHeight="25.0" prefWidth="39.0" promptText="mm" />
-      <TextField fx:id="txtFødselsdato2" layoutX="374.0" layoutY="166.0" prefHeight="25.0" prefWidth="39.0" promptText="åååå" />
+      <TextField fx:id="txtMåned" layoutX="319.0" layoutY="166.0" prefHeight="25.0" prefWidth="39.0" promptText="mm" />
+      <TextField fx:id="txtÅr" layoutX="374.0" layoutY="166.0" prefHeight="25.0" prefWidth="39.0" promptText="åååå" />
       <TableView layoutX="16.0" layoutY="328.0" prefHeight="258.0" prefWidth="573.0">
         <columns>
           <TableColumn prefWidth="119.19997596740723" text="Navn" />

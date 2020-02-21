@@ -37,4 +37,6 @@ public class Validering {
 
         // kilde for tlfnr regex: https://stackoverflow.com/questions/25763935/how-to-check-phone-number-format-is-valid-or-not-from-telephony-manager
     }
+
+
 }

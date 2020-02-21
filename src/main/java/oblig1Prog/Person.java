@@ -15,4 +15,44 @@ public class Person {
         this.epost = epost;
         this.telefon = telefon;
     }
+
+    public String getNavn() {
+        return navn;
+    }
+
+    public void setNavn(String navn) {
+        this.navn = navn;
+    }
+
+    public int getAlder() {
+        return alder;
+    }
+
+    public void setAlder(int alder) {
+        this.alder = alder;
+    }
+
+    public Dato getFødselsdato() {
+        return fødselsdato;
+    }
+
+    public void setFødselsdato(Dato fødselsdato) {
+        this.fødselsdato = fødselsdato;
+    }
+
+    public String getEpost() {
+        return epost;
+    }
+
+    public void setEpost(String epost) {
+        this.epost = epost;
+    }
+
+    public String getTelefon() {
+        return telefon;
+    }
+
+    public void setTelefon(String telefon) {
+        this.telefon = telefon;
+    }
 }

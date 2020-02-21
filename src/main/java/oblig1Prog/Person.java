@@ -55,4 +55,9 @@ public class Person {
     public void setTelefon(String telefon) {
         this.telefon = telefon;
     }
+
+    @Override
+    public String toString() {
+        return "Navn: " + navn + ", Alder: " + alder + ", Fødselsdato: " + fødselsdato + ", Epost: " + epost + ", Telefonnr: " + telefon + ".";
+    }
 }

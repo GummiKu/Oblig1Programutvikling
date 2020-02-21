@@ -10,6 +10,7 @@ class ValideringTest {
 
     @org.junit.jupiter.api.Test
     void epostSjekk() {
+        assertTrue(Validering.epostSjekk("henrik.lieng@oslomet.no"));
     }
 
     @org.junit.jupiter.api.Test

@@ -11,8 +11,11 @@ public class Dato {
     }
 
     @Override
-    public String toString(){
-        return dag + "." + måned + "." + år;
+    public String toString() {
+        String txtDag = String.format("%02d", dag);
+        String txtMåned = String.format("%02d", måned);
+        String txtÅr = String.format("%02d", år);
+        return txtDag + "." + txtMåned + "." + txtÅr;
     }
 
 }

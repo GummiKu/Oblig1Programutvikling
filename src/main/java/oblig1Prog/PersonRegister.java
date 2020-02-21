@@ -14,7 +14,7 @@ public class PersonRegister {
                     System.out.println("Fødselsdato: " + i.fødselsdato);
                     System.out.println("Epost: " + i.epost);
                     System.out.println("Telefonnummer: " + i.telefon);
-                    System.out.println("-------------------");
+                    System.out.println("----------------------");
 
             }
         }

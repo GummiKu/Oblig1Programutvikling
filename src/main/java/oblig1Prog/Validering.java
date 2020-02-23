@@ -29,7 +29,7 @@ public class Validering {
     }
     public static boolean telefonSjekk(String telefonnr){
         //TODO Feilsjekk telefunnummer
-        String tlfRegex = "^(1\\-)?[0-9]{3}\\-?[0-9]{3}\\-?[0-9]{4}$";
+        String tlfRegex = "^\\+?(?:[0-9] ?){6,14}[0-9]$|^[+]?[01]?[- .]?(\\([2-9]\\d{2}\\)|[2-9]\\d{2})[- .]?\\d{3}[- .]?\\d{4}$|(0047|\\(\\+47\\) ?|47)?\\d{8}";
         Pattern pat = Pattern.compile(tlfRegex);
         if(telefonnr == null)
             return false;

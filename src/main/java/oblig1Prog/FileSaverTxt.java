@@ -7,6 +7,6 @@ import java.util.List;
 public class FileSaverTxt implements FileSaver {
 
     public void saveToFile(List<?> objekter, Path fil){
-        Files.write(fil, objekter.toString().getBytes());
+        //Files.write(fil, objekter.toString().getBytes());
     }
 }

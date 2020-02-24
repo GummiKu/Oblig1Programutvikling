@@ -2,10 +2,7 @@ package oblig1Prog;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 
 import java.io.File;
@@ -22,19 +19,10 @@ public class Controller {
     private MenuItem hentFraFil;
 
     @FXML
-    private Label lblNavn;
-
-    @FXML
     private TextField txtNavn;
 
     @FXML
-    private Label lblAlder;
-
-    @FXML
     private TextField txtAlder;
-
-    @FXML
-    private Label lblFødselsdato;
 
     @FXML
     private TextField txtDag;
@@ -46,19 +34,28 @@ public class Controller {
     private TextField txtÅr;
 
     @FXML
-    private Label lblEpost;
-
-    @FXML
     private TextField txtEpost;
-
-    @FXML
-    private Label lblTelefon;
 
     @FXML
     private TextField txtTelefon;
 
     @FXML
     private Button registrerPerson;
+
+    @FXML
+    private TableColumn<?, ?> txtUtNavn;
+
+    @FXML
+    private TableColumn<?, ?> txtUtAlder;
+
+    @FXML
+    private TableColumn<?, ?> txtUtFødselsdato;
+
+    @FXML
+    private TableColumn<?, ?> txtUtEpost;
+
+    @FXML
+    private TableColumn<?, ?> txtUtTelefon;
 
     @FXML
     private Label lblErrNavn;
@@ -81,7 +78,6 @@ public class Controller {
 
     @FXML
     void hentFraFil(ActionEvent event) {
-        void hentFraFil(ActionEvent event) {
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Åpne fil");
             fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Kommaseparert verdi", "*.csv"));

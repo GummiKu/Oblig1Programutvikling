@@ -57,6 +57,24 @@ public class Controller {
     private Button registrerPerson;
 
     @FXML
+    private Label lblErrNavn;
+
+    @FXML
+    private Label lblErrAlder;
+
+    @FXML
+    private Label lblErrFødselsdato;
+
+    @FXML
+    private Label lblErrEpost;
+
+    @FXML
+    private Label lblErrTelefon;
+
+    @FXML
+    private Label lblError;
+
+    @FXML
     void hentFraFil(ActionEvent event) {
 
     }

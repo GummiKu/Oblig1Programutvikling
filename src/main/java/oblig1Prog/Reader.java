@@ -15,7 +15,7 @@ public class Reader {
         try (BufferedReader reader = Files.newBufferedReader(Paths.get(path))) {
             String line;
 
-            // create a Person for each line
+
             while ((line = reader.readLine()) != null) {
                 list.add(parsePerson(line));
             }
@@ -24,7 +24,7 @@ public class Reader {
         return list;
     }
     private Person parsePerson(String line) throws InvalidPersonFormatException {
-        // split line string into three using the separator ";"
+        
         String[] split = line.split(PersonFormatter.DELIMITER);
         if(split.length != 7) {
             throw new InvalidPersonFormatException("Må bruke semikolon ; for å splitte datafeltene");

@@ -1,8 +1,27 @@
 package oblig1Prog;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+
 import java.util.ArrayList;
 
 public class PersonRegister {
+    private SimpleStringProperty txtNavn;
+    private SimpleIntegerProperty txtAlder;
+    private SimpleStringProperty txtFødselsdato;
+    private SimpleStringProperty txtEpost;
+    private SimpleStringProperty txtTelefon;
+
+    public PersonRegister(String txtNavn, int txtAlder, String txtFødselsdato, String txtEpost, String txtTelefon){
+        if(txtNavn.isEmpty()==true||txtNavn.isBlank()==true){
+            throw new InvalidNameException("Må fylles ut");
+        }
+        if(txtAlder < 0 || txtAlder > 120){
+            throw new InvalidNameException("Må fylles ut");
+        }
+    }
+
+
         public ArrayList<Person> register = new ArrayList<>();
         public void registrerPerson (Person enPerson) {
 

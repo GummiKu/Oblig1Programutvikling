@@ -1,13 +1,19 @@
 package oblig1Prog;
 
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.FileChooser;
+import javafx.util.converter.IntegerStringConverter;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.nio.file.Paths;
+import java.util.ResourceBundle;
 
 public class Controller {
 
@@ -44,7 +50,7 @@ public class Controller {
     private Button registrerPerson;
 
     @FXML
-    private TableView<?> tblPersonRegister;
+    private TableView<PersonRegister> tblPersonRegister;
 
     @FXML
     private TableColumn tblNavn;

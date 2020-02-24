@@ -3,11 +3,24 @@ package oblig1Prog;
 public class Dato {
     int dag, måned, år;
 
+    public Dato(int dag, int måned, int år) {
+        try{
+            Validering.datoSjekk(dag, måned, år);
+        } catch (InvalidDateException e) {
+            throw e;
+        }
+        this.dag = dag;
+        this.måned = måned;
+        this.år = år;
+
+    }
+
     public int getDag() {
         return dag;
     }
 
     public void setDag(int dag) {
+
         this.dag = dag;
     }
 
@@ -25,14 +38,6 @@ public class Dato {
 
     public void setÅr(int år) {
         this.år = år;
-    }
-
-    public Dato(int dag, int måned, int år) {
-
-        this.dag = dag;
-        this.måned = måned;
-        this.år = år;
-
     }
 
     @Override

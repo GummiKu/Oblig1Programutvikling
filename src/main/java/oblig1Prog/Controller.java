@@ -6,6 +6,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
+
+import java.io.File;
+import java.io.IOException;
 
 public class Controller {
 
@@ -76,6 +80,17 @@ public class Controller {
 
     @FXML
     void hentFraFil(ActionEvent event) {
+        void hentFraFil(ActionEvent event) {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Åpne fil");
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Kommaseparert verdi", "*.csv"));
+            File fil = fileChooser.showOpenDialog(null);
+            FileOpenerTxt leser = new FileOpenerTxt();
+            try {
+                leser.lesFraFil(fil.getPath());
+            }catch (IOException e){
+                lblError.setText(e.toString() + ": finner ikke fil.");
+            }
 
     }
 

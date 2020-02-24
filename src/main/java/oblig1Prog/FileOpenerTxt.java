@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FileOpenerTxt implements FileOpener {
+public class FileOpenerTxt {
     public List<Person> lesFraFil(String path) throws IOException {
         ArrayList<Person> list = new ArrayList<>();
 

@@ -91,6 +91,7 @@ public class Controller {
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Åpne fil");
             fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Tekstfil", "*.txt"));
+            fileChooser.setInitialDirectory(new File("./"));
             File fil = fileChooser.showOpenDialog(null);
             FileOpenerTxt leser = new FileOpenerTxt();
             try {
@@ -122,16 +123,34 @@ public class Controller {
         @FXML
         void registrerPerson (ActionEvent event){
             //Hente informasjon fra Label og legge til person i reg
+            resetFeilMelding();
 
             int intAlder = Integer.parseInt(txtAlder.getText());
             int intDag = Integer.parseInt(txtDag.getText());
             int intMåned = Integer.parseInt(txtMåned.getText());
             int intÅr = Integer.parseInt(txtÅr.getText());
-            Dato fødselsdato = new Dato(intDag, intMåned, intÅr);
-            Person enPerson = new Person(txtNavn.getText(), intAlder, fødselsdato, txtEpost.getText(), txtTelefon.getText());
-            reg.registrerPerson(enPerson);
-
-
+            try {
+                Dato fødselsdato = new Dato(intDag, intMåned, intÅr);
+                Person enPerson = new Person(txtNavn.getText(), intAlder, fødselsdato, txtEpost.getText(), txtTelefon.getText());
+                reg.registrerPerson(enPerson);
+            }catch (InvalidDateException d){
+                lblErrFødselsdato.setText(d.toString());
+            }catch (InvalidAgeException a){
+                lblErrAlder.setText(a.toString());
+            }catch (InvalidEpostException e){
+                lblErrEpost.setText(e.toString());
+            }catch (InvalidNameException t){
+                lblErrTelefon.setText(t.toString());
+            }
+        }
+        @FXML
+        void resetFeilMelding(){
+        lblErrTelefon.setText("");
+        lblErrEpost.setText("");
+        lblErrAlder.setText("");
+        lblErrFødselsdato.setText("");
+        lblErrNavn.setText("");
+        lblError.setText("");
         }
 
 }

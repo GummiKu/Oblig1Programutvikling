@@ -25,7 +25,9 @@ public class PersonRegister {
         public ArrayList<Person> register = new ArrayList<>();
         public void registrerPerson (Person enPerson) {
 
-            register.add(enPerson);
+            try{
+                register.add(enPerson);
+            } catch (IllegalArgumentException e){ throw e;}
             for(Person i : register) {
 
                     System.out.println("Navn: " + i.navn);

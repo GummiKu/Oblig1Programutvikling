@@ -11,7 +11,7 @@ public class Person {
     public Person(String navn, int alder, Dato fødselsdato, String epost, String telefon) {
         this.navn = navn;
 
-        if (alder<0 || alder > 120){
+        if (alder>0 && alder < 120){
             this.alder = alder;
         }
         else throw new InvalidAgeException("Alder må være mellom 0 og 120 år");
@@ -65,7 +65,9 @@ public class Person {
     }
 
     public void setEpost(String epost) {
-        this.epost = epost;
+        if (Validering.epostSjekk(epost)) {
+            this.epost = epost;
+        } else throw new InvalidEpostException("Ugyldig epostadresse");
     }
 
     public String getTelefon() {
@@ -73,7 +75,9 @@ public class Person {
     }
 
     public void setTelefon(String telefon) {
-        this.telefon = telefon;
+        if (Validering.telefonSjekk(telefon)) {
+            this.telefon = telefon;
+        } else throw new InvalidTelefonException("Telefunnummeret er ugyldig");
     }
 
     @Override

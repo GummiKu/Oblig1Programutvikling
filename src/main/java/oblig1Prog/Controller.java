@@ -44,7 +44,7 @@ public class Controller {
     private Button registrerPerson;
 
     @FXML
-    private TableView<?> tblPersonRegister;
+    private TableView<PersonRegister> tblPersonRegister;
 
     @FXML
     private TableColumn txtUtNavn;
@@ -96,36 +96,36 @@ public class Controller {
     }
 
 
-        @FXML
-        void lagreTilFil (ActionEvent event){
-            int alder = Integer.parseInt(txtAlder.getText());
-            int dag = Integer.parseInt(txtDag.getText());
-            int måned = Integer.parseInt(txtMåned.getText());
-            int år = Integer.parseInt(txtÅr.getText());
-            Dato fødselsdato = new Dato(dag, måned, år);
-            Person p = new Person(txtNavn.getText(), alder, fødselsdato, txtEpost.getText(), txtTelefon.getText());
-            var path = Paths.get("person.txt");
-            String formatert = PersonFormatter.formatPerson(p);
-            try {
-                FileSaverTxt.skrivFil(path, formatert);
-            } catch (IOException e) {
-                lblError.setText("Noe gikk feil: " + e.getMessage());
-            }
+    @FXML
+    void lagreTilFil (ActionEvent event){
+        int alder = Integer.parseInt(txtAlder.getText());
+        int dag = Integer.parseInt(txtDag.getText());
+        int måned = Integer.parseInt(txtMåned.getText());
+        int år = Integer.parseInt(txtÅr.getText());
+        Dato fødselsdato = new Dato(dag, måned, år);
+        Person p = new Person(txtNavn.getText(), alder, fødselsdato, txtEpost.getText(), txtTelefon.getText());
+        var path = Paths.get("person.txt");
+        String formatert = PersonFormatter.formatPerson(p);
+        try {
+            FileSaverTxt.skrivFil(path, formatert);
+        } catch (IOException e) {
+            lblError.setText("Noe gikk feil: " + e.getMessage());
         }
+    }
 
-        @FXML
-        void registrerPerson (ActionEvent event){
-            //Hente informasjon fra Label og legge til person i reg
+    @FXML
+    void registrerPerson (ActionEvent event){
+        //Hente informasjon fra Label og legge til person i reg
 
-            int intAlder = Integer.parseInt(txtAlder.getText());
-            int intDag = Integer.parseInt(txtDag.getText());
-            int intMåned = Integer.parseInt(txtMåned.getText());
-            int intÅr = Integer.parseInt(txtÅr.getText());
-            Dato fødselsdato = new Dato(intDag, intMåned, intÅr);
-            Person enPerson = new Person(txtNavn.getText(), intAlder, fødselsdato, txtEpost.getText(), txtTelefon.getText());
-            reg.registrerPerson(enPerson);
+        int intAlder = Integer.parseInt(txtAlder.getText());
+        int intDag = Integer.parseInt(txtDag.getText());
+        int intMåned = Integer.parseInt(txtMåned.getText());
+        int intÅr = Integer.parseInt(txtÅr.getText());
+        Dato fødselsdato = new Dato(intDag, intMåned, intÅr);
+        Person enPerson = new Person(txtNavn.getText(), intAlder, fødselsdato, txtEpost.getText(), txtTelefon.getText());
+        reg.registrerPerson(enPerson);
 
 
-        }
+    }
 
 }

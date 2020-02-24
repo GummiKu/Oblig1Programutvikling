@@ -47,19 +47,19 @@ public class Controller {
     private TableView<PersonRegister> tblPersonRegister;
 
     @FXML
-    private TableColumn txtUtNavn;
+    private TableColumn tblNavn;
 
     @FXML
-    private TableColumn  txtUtAlder;
+    private TableColumn  tblAlder;
 
     @FXML
-    private TableColumn txtUtFødselsdato;
+    private TableColumn tblFødselsdato;
 
     @FXML
-    private TableColumn txtUtEpost;
+    private TableColumn tblEpost;
 
     @FXML
-    private TableColumn txtUtTelefon;
+    private TableColumn tblTelefon;
 
     @FXML
     private Label lblErrNavn;

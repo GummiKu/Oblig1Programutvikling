@@ -6,7 +6,10 @@ public class PersonFormatter {
     public static String DELIMITER = ";";
 
     public static String formatPerson(Person nyPerson){
-        return nyPerson.getNavn() + DELIMITER + nyPerson.getAlder() + DELIMITER + nyPerson.getFødselsdato()
+        int dag = nyPerson.fødselsdato.getDag();
+        int måned = nyPerson.fødselsdato.getMåned();
+        int år = nyPerson.fødselsdato.getÅr();
+        return nyPerson.getNavn() + DELIMITER + nyPerson.getAlder() + DELIMITER + dag + DELIMITER + måned + DELIMITER + år
                 + DELIMITER + nyPerson.getEpost() + DELIMITER + nyPerson.getTelefon();
     }
 

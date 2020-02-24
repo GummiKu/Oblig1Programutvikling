@@ -41,7 +41,7 @@
       <Label layoutX="39.0" layoutY="245.0" text="Telefon" />
       <TextField fx:id="txtTelefon" layoutX="122.0" layoutY="241.0" promptText="Telefon" />
       <Button fx:id="registrerPerson" layoutX="154.0" layoutY="279.0" mnemonicParsing="false" onAction="#registrerPerson" text="Registrer" />
-      <TableView layoutX="16.0" layoutY="328.0" prefHeight="258.0" prefWidth="573.0">
+      <TableView fx:id="tblPersonRegister" layoutX="16.0" layoutY="328.0" prefHeight="258.0" prefWidth="573.0">
         <columns>
           <TableColumn fx:id="txtUtNavn" prefWidth="119.19997596740723" text="Navn" />
           <TableColumn fx:id="txtUtAlder" prefWidth="50.4000244140625" text="Alder" />

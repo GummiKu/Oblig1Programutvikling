@@ -44,6 +44,9 @@ public class Controller {
     private Button registrerPerson;
 
     @FXML
+    private TableView<?> tblPersonRegister;
+
+    @FXML
     private TableColumn<?, ?> txtUtNavn;
 
     @FXML

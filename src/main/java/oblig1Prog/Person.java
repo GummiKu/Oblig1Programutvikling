@@ -10,10 +10,27 @@ public class Person {
 
     public Person(String navn, int alder, Dato fødselsdato, String epost, String telefon) {
         this.navn = navn;
-        this.alder = alder;
-        this.fødselsdato = fødselsdato;
-        this.epost = epost;
-        this.telefon = telefon;
+
+        if (alder<0 || alder > 120){
+            this.alder = alder;
+        }
+        else throw new InvalidAgeException("Alder må være mellom 0 og 120 år");
+
+        int dag = fødselsdato.getDag();
+        int måned = fødselsdato.getMåned();
+        int år = fødselsdato.getÅr();
+        try {
+            Validering.datoSjekk(dag,måned,år);
+            this.fødselsdato = fødselsdato;
+        } catch (InvalidDateException e) {
+            throw e;
+        }
+        if (Validering.epostSjekk(epost)) {
+            this.epost = epost;
+        } else throw new InvalidEpostException("Ugyldig epostadresse");
+        if (Validering.telefonSjekk(telefon)) {
+            this.telefon = telefon;
+        } else throw new InvalidTelefonException("Telefunnummeret er ugyldig");
     }
 
     public String getNavn() {
@@ -29,7 +46,10 @@ public class Person {
     }
 
     public void setAlder(int alder) {
-        this.alder = alder;
+        if (alder<0 || alder > 120){
+            this.alder = alder;
+        }
+        else throw new InvalidAgeException("Alder må være mellom 0 og 120 år");
     }
 
     public Dato getFødselsdato() {

@@ -28,6 +28,7 @@ public class Dato {
     }
 
     public Dato(int dag, int måned, int år) {
+
         this.dag = dag;
         this.måned = måned;
         this.år = år;

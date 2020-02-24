@@ -4,6 +4,7 @@ import java.util.regex.Pattern;
 
 public class Validering {
     public static void datoSjekk(int dag, int måned, int år) throws InvalidDateException{
+
         if (dag<1 || dag>31){
             throw new InvalidDateException("Dagen må være et heltall mellom 1 og 31.");
         }

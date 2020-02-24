@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.control.cell.PropertyValueFactory?>
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="605.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oblig1Prog.Controller">
    <children>
       <MenuBar layoutX="23.0" layoutY="17.0">
@@ -44,31 +43,11 @@
       <Button fx:id="registrerPerson" layoutX="154.0" layoutY="279.0" mnemonicParsing="false" onAction="#registrerPerson" text="Registrer" />
       <TableView fx:id="tblPersonRegister" layoutX="16.0" layoutY="328.0" prefHeight="258.0" prefWidth="573.0">
         <columns>
-            <TableColumn fx:id="tblNavn" prefWidth="120.0" text="Navn">
-                <cellValueFactory>
-                    <PropertyValueFactory property="TxtNavn" />
-                </cellValueFactory>
-            </TableColumn>
-            <TableColumn fx:id="tblAlder" prefWidth="50.0" text="Alder">
-                <cellValueFactory>
-                    <PropertyValueFactory property="TxtAlder" />
-                </cellValueFactory>
-            </TableColumn>
-            <TableColumn fx:id="tblFødselsdag" prefWidth="100.0" text="Fødselsdato">
-                <cellValueFactory>
-                    <PropertyValueFactory property="TxtFødselsdato" />
-                </cellValueFactory>
-            </TableColumn>
-            <TableColumn fx:id="tblEpost" prefWidth="180.0" text="Epost">
-                <cellValueFactory>
-                    <PropertyValueFactory property="TxtEpost" />
-                </cellValueFactory>
-            </TableColumn>
-            <TableColumn fx:id="tblTelefon" prefWidth="120.0" text="Telefon">
-                <cellValueFactory>
-                    <PropertyValueFactory property="TxtTelefon" />
-                </cellValueFactory>
-            </TableColumn>
+          <TableColumn fx:id="txtUtNavn" prefWidth="119.19997596740723" text="Navn" />
+          <TableColumn fx:id="txtUtAlder" prefWidth="50.4000244140625" text="Alder" />
+            <TableColumn fx:id="txtUtFødselsdato" prefWidth="92.0" text="Fødselsdato" />
+            <TableColumn fx:id="txtUtEpost" prefWidth="188.0" text="Epost" />
+            <TableColumn fx:id="txtUtTelefon" prefWidth="126.39999389648438" text="Telefon" />
         </columns>
       </TableView>
       <Label fx:id="lblErrNavn" layoutX="305.0" layoutY="84.0" />

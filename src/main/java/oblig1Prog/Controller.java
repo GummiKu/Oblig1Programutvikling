@@ -88,6 +88,17 @@ public class Controller {
             File fil = fileChooser.showOpenDialog(null);
             FileOpenerTxt leser = new FileOpenerTxt();
             try {
+                System.out.println(leser.lesFraFil(fil.getPath()));
+
+            } catch (IOException e) {
+                lblError.setText(e.toString());
+            }
+    }
+
+    @FXML
+    void lagreTilFil(ActionEvent event) {
+
+    }
                 leser.lesFraFil(fil.getPath());
             } catch (IOException e) {
                 lblError.setText(e.toString() + ": finner ikke fil.");

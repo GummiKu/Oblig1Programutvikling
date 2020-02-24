@@ -81,18 +81,17 @@ public class Controller {
 
     @FXML
     void hentFraFil(ActionEvent event) {
-        void hentFraFil(ActionEvent event) {
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Åpne fil");
             fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Kommaseparert verdi", "*.csv"));
             File fil = fileChooser.showOpenDialog(null);
             FileOpenerTxt leser = new FileOpenerTxt();
             try {
-                leser.lesFraFil(fil.getPath());
-            }catch (IOException e){
-                lblError.setText(e.toString() + ": finner ikke fil.");
-            }
+                System.out.println(leser.lesFraFil(fil.getPath()));
 
+            } catch (IOException e) {
+                lblError.setText(e.toString());
+            }
     }
 
     @FXML

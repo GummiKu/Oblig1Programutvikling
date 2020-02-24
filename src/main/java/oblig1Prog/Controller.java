@@ -95,16 +95,6 @@ public class Controller {
             }
     }
 
-    @FXML
-    void lagreTilFil(ActionEvent event) {
-
-    }
-                leser.lesFraFil(fil.getPath());
-            } catch (IOException e) {
-                lblError.setText(e.toString() + ": finner ikke fil.");
-            }
-
-        }
 
         @FXML
         void lagreTilFil (ActionEvent event){

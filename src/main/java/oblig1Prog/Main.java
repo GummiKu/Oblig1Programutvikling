@@ -6,6 +6,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.Reader;
+import java.util.List;
+import java.io.IOException;
+
 public class Main extends Application {
 
     @Override
@@ -19,5 +23,17 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
+
+        FileOpenerTxt reader = new FileOpenerTxt();
+
+        try {
+        List<Person> personList = reader.lesFraFil("C:\\Users\\knaps\\Desktop\\Test.csv");
+        System.out.println(personList);
+        } catch (InvalidPersonFormatException e) {
+        System.err.println("Dataen er ikke formatert korrekt: " + e.getMessage());
+        } catch (IOException e) {
+        System.err.println("Kunne ikke lese forespurt fil: " + e.toString());
+        }
+
     }
 }

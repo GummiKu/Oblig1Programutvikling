@@ -78,6 +78,7 @@ public class Controller {
     @FXML
     private Label lblError;
 
+
     @FXML
     void hentFraFil(ActionEvent event) {
         void hentFraFil(ActionEvent event) {

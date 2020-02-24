@@ -15,7 +15,7 @@
    <children>
       <MenuBar layoutX="23.0" layoutY="17.0">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Fil">
             <items>
               <MenuItem fx:id="lagreTilFil" mnemonicParsing="false" onAction="#lagreTilFil" text="Lagre til fil" />
                   <MenuItem fx:id="hentFraFil" mnemonicParsing="false" onAction="#hentFraFil" text="Hent fra fil" />
@@ -50,11 +50,11 @@
             <TableColumn prefWidth="126.39999389648438" text="Telefon" />
         </columns>
       </TableView>
-      <Label fx:id="lblErrNavn" layoutX="305.0" layoutY="84.0" text="Label" />
-      <Label fx:id="lblErrAlder" layoutX="305.0" layoutY="124.0" text="Label" />
-      <Label fx:id="lblErrFødselsdato" layoutX="305.0" layoutY="164.0" text="Label" />
-      <Label fx:id="lblErrEpost" layoutX="305.0" layoutY="204.0" text="Label" />
-      <Label fx:id="lblErrTelefon" layoutX="305.0" layoutY="245.0" text="Label" />
-      <Label fx:id="lblError" layoutX="305.0" layoutY="289.0" text="Label" />
+      <Label fx:id="lblErrNavn" layoutX="305.0" layoutY="84.0" />
+      <Label fx:id="lblErrAlder" layoutX="305.0" layoutY="124.0" />
+      <Label fx:id="lblErrFødselsdato" layoutX="305.0" layoutY="164.0" />
+      <Label fx:id="lblErrEpost" layoutX="305.0" layoutY="204.0" />
+      <Label fx:id="lblErrTelefon" layoutX="305.0" layoutY="245.0" />
+      <Label fx:id="lblError" layoutX="305.0" layoutY="289.0" />
    </children>
 </Pane>

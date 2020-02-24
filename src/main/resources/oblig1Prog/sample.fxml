@@ -46,27 +46,27 @@
         <columns>
             <TableColumn fx:id="txtUtNavn" prefWidth="100.0" text="Navn">
                 <cellValueFactory>
-                    <PropertyValueFactory property="innNavn" />
+                    <PropertyValueFactory property="txtNavn" />
                 </cellValueFactory>
             </TableColumn>
             <TableColumn fx:id="txtUtAlder" prefWidth="70.0" text="Alder">
                 <cellValueFactory>
-                    <PropertyValueFactory property="alder" />
+                    <PropertyValueFactory property="txtAlder" />
                 </cellValueFactory>
             </TableColumn>
             <TableColumn fx:id="txtUtFødselsdato" prefWidth="100.0" text="Fødselsdato">
                 <cellValueFactory>
-                    <PropertyValueFactory property="fødselsdato" />
+                    <PropertyValueFactory property="txtFødselsdato" />
                 </cellValueFactory>
             </TableColumn>
             <TableColumn fx:id="txtUtEpost" prefWidth="180.0" text="Epost">
                 <cellValueFactory>
-                    <PropertyValueFactory property="innEpost" />
+                    <PropertyValueFactory property="txtEpost" />
                 </cellValueFactory>
             </TableColumn>
             <TableColumn fx:id="txtUtTelefon" prefWidth="120.0" text="Telefon">
                 <cellValueFactory>
-                    <PropertyValueFactory property="innTelefon" />
+                    <PropertyValueFactory property="txtTelefon" />
                 </cellValueFactory>
             </TableColumn>
         </columns>

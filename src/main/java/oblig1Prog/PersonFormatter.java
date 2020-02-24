@@ -3,7 +3,7 @@ package oblig1Prog;
 import java.util.List;
 
 public class PersonFormatter {
-    public static String DELIMITER = " - ";
+    public static String DELIMITER = ";";
 
     public static String formatPerson(Person nyPerson){
         return nyPerson.getNavn() + DELIMITER + nyPerson.getAlder() + DELIMITER + nyPerson.getFødselsdato()

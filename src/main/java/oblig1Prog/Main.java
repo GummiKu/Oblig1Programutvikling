@@ -30,9 +30,9 @@ public class Main extends Application {
         List<Person> personList = reader.lesFraFil("C:\\Users\\knaps\\Desktop\\Test.csv");
         System.out.println(personList);
         } catch (InvalidPersonFormatException e) {
-        System.err.println("The data is not formatted correctly. Cause: " + e.getMessage());
+        System.err.println("Dataen er ikke formatert korrekt: " + e.getMessage());
         } catch (IOException e) {
-        System.err.println("Could not read the requested file. Cause: " + e.toString());
+        System.err.println("Kunne ikke lese forespurt fil: " + e.toString());
         }
 
     }

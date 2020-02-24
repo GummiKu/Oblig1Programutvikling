@@ -30,7 +30,7 @@ public class Reader {
             throw new InvalidPersonFormatException("Må bruke semikolon ; for å splitte datafeltene");
         }
 
-        String name = split[0];
+        String navn = split[0];
         int alder = parseNumber(split[1], "Alder er ikke et tall");
         int dag = parseNumber(split[2], "Dag er ikke et tall");
         int måned = parseNumber(split[3], "Måned er ikke et tall");
@@ -39,7 +39,7 @@ public class Reader {
         String telefon = split[6];
         Dato fødselsdato = new Dato(dag,måned,år);
 
-        return new Person(name, alder, fødselsdato, epost, telefon);
+        return new Person(navn, alder, fødselsdato, epost, telefon);
     }
 
     private int parseNumber(String str, String errorMessage) throws InvalidPersonFormatException{

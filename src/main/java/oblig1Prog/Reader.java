@@ -25,18 +25,21 @@ public class Reader {
     }
     private Person parsePerson(String line) throws InvalidPersonFormatException {
         // split line string into three using the separator ";"
-        String[] split = line.split(";");
-        if(split.length != 5) {
-            throw new InvalidPersonFormatException("Must use semicolon ; to separate the three data fields");
+        String[] split = line.split(PersonFormatter.DELIMITER);
+        if(split.length != 7) {
+            throw new InvalidPersonFormatException("Må bruke semikolon ; for å splitte datafeltene");
         }
 
         String name = split[0];
-        int age = parseNumber(split[1], "Age (second field) is not a number");
-        int date = parseNumber(split[2], "Id (third field) is not a number");
-        String epost = split[3];
-        String telefon = split[4];
+        int alder = parseNumber(split[1], "Alder er ikke et tall");
+        int dag = parseNumber(split[2], "Dag er ikke et tall");
+        int måned = parseNumber(split[3], "Måned er ikke et tall");
+        int år = parseNumber(split[4], "År er ikke et tall");
+        String epost = split[5];
+        String telefon = split[6];
+        Dato fødselsdato = new Dato(dag,måned,år);
 
-        return new Person(name, age, date, epost, telefon);
+        return new Person(name, alder, fødselsdato, epost, telefon);
     }
 
     private int parseNumber(String str, String errorMessage) throws InvalidPersonFormatException{

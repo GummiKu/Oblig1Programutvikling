@@ -4,11 +4,13 @@ public class Dato {
     int dag, måned, år;
 
     public Dato(int dag, int måned, int år) {
-        try{
+       /* try{
             Validering.datoSjekk(dag, måned, år);
         } catch (InvalidDateException e) {
             throw e;
         }
+
+        */
         this.dag = dag;
         this.måned = måned;
         this.år = år;

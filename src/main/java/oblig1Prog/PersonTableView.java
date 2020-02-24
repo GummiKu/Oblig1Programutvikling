@@ -6,13 +6,13 @@ import javafx.scene.control.TableView;
 
 public class PersonTableView {
 
-    private ObservableList<PersonRegister> list = FXCollections.observableArrayList();
+    private ObservableList<PersonRegister> personListe = FXCollections.observableArrayList();
 
     public void attachTableView(TableView tv) {
-        tv.setItems(list);
+        tv.setItems(personListe);
     }
-    public void addElement(DataModel obj) {
-        list.add(obj);
+    public void addElement(PersonRegister obj) {
+        personListe.add(obj);
     }
 
 }

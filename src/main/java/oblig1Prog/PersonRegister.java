@@ -12,13 +12,79 @@ public class PersonRegister {
     private SimpleStringProperty txtEpost;
     private SimpleStringProperty txtTelefon;
 
-    public PersonRegister(String txtNavn, int txtAlder, String txtFødselsdato, String txtEpost, String txtTelefon){
-        if(txtNavn.isEmpty()==true||txtNavn.isBlank()==true){
-            throw new InvalidNameException("Må fylles ut");
-        }
+    public String getTxtNavn() {
+        return txtNavn.get();
+    }
+
+    public SimpleStringProperty txtNavnProperty() {
+        return txtNavn;
+    }
+
+    public void setTxtNavn(String txtNavn) {
+        this.txtNavn.set(txtNavn);
+    }
+
+    public int getTxtAlder() {
+        return txtAlder.get();
+    }
+
+    public SimpleIntegerProperty txtAlderProperty() {
+        return txtAlder;
+    }
+
+    public void setTxtAlder(int txtAlder) {
         if(txtAlder < 0 || txtAlder > 120){
-            throw new InvalidNameException("Må fylles ut");
+            throw new InvalidAgeException("Ugyldig alder");
         }
+        this.txtAlder.set(txtAlder);
+    }
+
+    public String getTxtFødselsdato() {
+        return txtFødselsdato.get();
+    }
+
+    public SimpleStringProperty txtFødselsdatoProperty() {
+        return txtFødselsdato;
+    }
+
+    public void setTxtFødselsdato(String txtFødselsdato) {
+        this.txtFødselsdato.set(txtFødselsdato);
+    }
+
+    public String getTxtEpost() {
+        return txtEpost.get();
+    }
+
+    public SimpleStringProperty txtEpostProperty() {
+        return txtEpost;
+    }
+
+    public void setTxtEpost(String txtEpost) {
+        this.txtEpost.set(txtEpost);
+    }
+
+    public String getTxtTelefon() {
+        return txtTelefon.get();
+    }
+
+    public SimpleStringProperty txtTelefonProperty() {
+        return txtTelefon;
+    }
+
+    public void setTxtTelefon(String txtTelefon) {
+        this.txtTelefon.set(txtTelefon);
+    }
+
+    public PersonRegister(String txtNavn, int txtAlder, String txtFødselsdato, String txtEpost, String txtTelefon){
+
+        this.txtNavn = new SimpleStringProperty(txtNavn);
+        this.txtAlder = new SimpleIntegerProperty(txtAlder);
+        this.txtFødselsdato = new SimpleStringProperty(txtFødselsdato);
+        this.txtEpost = new SimpleStringProperty(txtEpost);
+        this.txtTelefon = new SimpleStringProperty(txtTelefon);
+
+
+
     }
 
 

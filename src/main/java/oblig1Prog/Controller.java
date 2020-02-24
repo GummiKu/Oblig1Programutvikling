@@ -17,8 +17,6 @@ import java.util.ResourceBundle;
 
 public class Controller {
 
-    PersonRegister reg = new PersonRegister();
-
     @FXML
     private MenuItem lagreTilFil;
 
@@ -85,6 +83,14 @@ public class Controller {
     @FXML
     private Label lblError;
 
+    //PersonRegister reg = new PersonRegister(txtNavn, txtAlder, txtEpost, txtTelefon);
+
+    PersonTableView personSamling = new PersonTableView();
+
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        personSamling.attachTableView(tblPersonRegister);
+    }
+
 
     @FXML
     void hentFraFil(ActionEvent event) {
@@ -121,28 +127,60 @@ public class Controller {
         }
 
         @FXML
-        void registrerPerson (ActionEvent event){
-            //Hente informasjon fra Label og legge til person i reg
-            resetFeilMelding();
+        public void registrerPerson (ActionEvent event){
+            PersonRegister reg = lagPersonFraGUI();
 
-            int intAlder = Integer.parseInt(txtAlder.getText());
-            int intDag = Integer.parseInt(txtDag.getText());
-            int intMåned = Integer.parseInt(txtMåned.getText());
-            int intÅr = Integer.parseInt(txtÅr.getText());
-            try {
-                Dato fødselsdato = new Dato(intDag, intMåned, intÅr);
-                Person enPerson = new Person(txtNavn.getText(), intAlder, fødselsdato, txtEpost.getText(), txtTelefon.getText());
-                reg.registrerPerson(enPerson);
-            }catch (InvalidDateException d){
-                lblErrFødselsdato.setText(d.toString());
-            }catch (InvalidAgeException a){
-                lblErrAlder.setText(a.toString());
-            }catch (InvalidEpostException e){
-                lblErrEpost.setText(e.toString());
-            }catch (InvalidNameException t){
-                lblErrTelefon.setText(t.toString());
+            if(reg != null) {
+                resetTekstFelt();
+                resetFeilMelding();
+                personSamling.addElement(reg);
             }
         }
+
+    private PersonRegister lagPersonFraGUI() {
+        String innNavn = txtNavn.getText();
+        String innAlder = txtAlder.getText();
+        String innDag = txtDag.getText();
+        String innMåned = txtMåned.getText();
+        String innÅr = txtÅr.getText();
+        String innEpost = txtEpost.getText();
+        String innTelefon = txtTelefon.getText();
+
+
+        try {
+            int alder = Validering.alderSjekk(innAlder);
+            String fødselsdato = Validering.datoSjekk(innDag, innMåned, innÅr);
+            if(Validering.telefonSjekk(innTelefon) == true && Validering.epostSjekk(innEpost)==true){
+                return new PersonRegister(innNavn, alder, fødselsdato, innEpost, innTelefon);
+            }
+
+
+            //Person enPerson = new Person(innNavn, alder, fødselsdato, innEpost, innTelefon);
+            //reg.registrerPerson(enPerson);
+
+        }catch (InvalidDateException d){
+            lblErrFødselsdato.setText(d.toString());
+        }catch (InvalidAgeException a){
+            lblErrAlder.setText(a.toString());
+        }catch (InvalidEpostException e){
+            lblErrEpost.setText(e.toString());
+        }catch (InvalidNameException t){
+            lblErrTelefon.setText(t.toString());
+        }
+        return null;
+    }
+
+    private void resetTekstFelt() {
+        txtNavn.setText("");
+        txtAlder.setText("");
+        txtDag.setText("");
+        txtMåned.setText("");
+        txtÅr.setText("");
+        txtEpost.setText("");
+        txtTelefon.setText("");
+    }
+
+
         @FXML
         void resetFeilMelding(){
         lblErrTelefon.setText("");
